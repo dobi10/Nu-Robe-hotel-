@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Nu Robe Admin Login</title>
+
+<style>
+
+body{
+background:#08111d;
+color:white;
+font-family:Arial;
+display:flex;
+height:100vh;
+justify-content:center;
+align-items:center;
+}
+
+.box{
+background:#122031;
+padding:40px;
+border-radius:20px;
+width:320px;
+}
+
+h2{
+color:#FFD700;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+background:#08111d;
+color:white;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#FFD700;
+border:none;
+border-radius:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+
+<h2>Admin Login</h2>
+
+
+<input id="email" placeholder="Email">
+
+
+<input id="password" type="password" placeholder="Password">
+
+
+<button id="login">
+Login
+</button>
+
+
+</div>
+
+
+
+<script type="module">
+
+
+import {initializeApp}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import {
+
+getAuth,
+
+signInWithEmailAndPassword
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+
+const firebaseConfig={
+
+
+apiKey:"AIzaSyBCEuMH5hH2JpMPANFSIQ6P57A4r5eG6Zk",
+
+authDomain:"nu-robe.firebaseapp.com",
+
+projectId:"nu-robe",
+
+storageBucket:"nu-robe.firebasestorage.app",
+
+messagingSenderId:"994659173220",
+
+appId:"1:994659173220:web:5d53ae9422c77e1d917071"
+
+};
+
+
+
+const app=initializeApp(firebaseConfig);
+
+
+const auth=getAuth(app);
+
+
+
+document.getElementById("login").onclick=()=>{
+
+
+let email=
+document.getElementById("email").value;
+
+
+let password=
+document.getElementById("password").value;
+
+
+
+signInWithEmailAndPassword(auth,email,password)
+
+.then(()=>{
+
+
+window.location="admin.html";
+
+
+})
+
+
+.catch(()=>{
+
+
+alert("Wrong email or password");
+
+
+});
+
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
