@@ -8,18 +8,14 @@
 
 <title>Nu Robe Hotel Admin</title>
 
+
 <style>
 
 body{
-font-family:Poppins,Arial,sans-serif;
+font-family:Arial,sans-serif;
 background:#08111d;
 color:white;
 padding:30px;
-}
-
-h1{
-color:#FFD700;
-text-align:center;
 }
 
 .container{
@@ -27,23 +23,46 @@ max-width:1000px;
 margin:auto;
 }
 
+h1{
+color:#FFD700;
+text-align:center;
+}
+
+
+button{
+background:#FFD700;
+color:#111;
+border:none;
+padding:12px 25px;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+}
+
+
+.logout{
+text-align:right;
+margin-bottom:20px;
+}
+
+
 .booking{
+
 background:#122031;
 padding:20px;
-border-radius:15px;
 margin:20px 0;
-box-shadow:0 0 15px rgba(255,215,0,.15);
+border-radius:15px;
+
 }
+
 
 .booking h3{
 color:#FFD700;
 }
 
-.booking p{
-margin:8px 0;
-}
 
 </style>
+
 
 </head>
 
@@ -54,28 +73,45 @@ margin:8px 0;
 <div class="container">
 
 
-<h1>Nu Robe Hotel Bookings</h1>
+<div class="logout">
+
+<button id="logout">
+Logout
+</button>
+
+</div>
+
+
+<h1>
+Nu Robe Hotel Reservations
+</h1>
+
 
 
 <div id="bookings">
 
-Loading bookings...
+Checking login...
 
 </div>
 
 
+
 </div>
+
+
 
 
 
 <script type="module">
 
 
-import { initializeApp } 
+import {initializeApp}
+
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 
-import { 
+
+import {
 
 getFirestore,
 
@@ -87,54 +123,107 @@ orderBy,
 
 query
 
-} 
+}
+
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
 
+import {
 
-const firebaseConfig = {
+getAuth,
+
+onAuthStateChanged,
+
+signOut
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
-apiKey: "AIzaSyBCEuMH5hH2jPmpANFSIQ6P57A4r5eG6Zk",
 
-authDomain: "nu-robe.firebaseapp.com",
 
-projectId: "nu-robe",
 
-storageBucket: "nu-robe.firebasestorage.app",
+const firebaseConfig={
 
-messagingSenderId: "994659173220",
 
-appId: "1:994659173220:web:5d53ae9422c77e1d917071"
+apiKey:"AIzaSyBCEuMH5hH2JpMPANFSIQ6P57A4r5eG6Zk",
+
+authDomain:"nu-robe.firebaseapp.com",
+
+projectId:"nu-robe",
+
+storageBucket:"nu-robe.firebasestorage.app",
+
+messagingSenderId:"994659173220",
+
+appId:"1:994659173220:web:5d53ae9422c77e1d917071"
+
 
 };
 
 
 
-const app = initializeApp(firebaseConfig);
+const app=initializeApp(firebaseConfig);
 
 
-const db = getFirestore(app);
+const db=getFirestore(app);
+
+
+const auth=getAuth(app);
 
 
 
-const bookingsDiv =
+const bookingsDiv=
 document.getElementById("bookings");
+
+
+
+
+
+onAuthStateChanged(auth,(user)=>{
+
+
+if(user){
+
+
+loadBookings();
+
+
+}
+
+else{
+
+
+window.location="login.html";
+
+
+}
+
+
+});
+
+
+
+
 
 
 
 async function loadBookings(){
 
 
-const q = query(
+const q=query(
+
 collection(db,"bookings"),
+
 orderBy("time","desc")
+
 );
 
 
 
-const snapshot = await getDocs(q);
+const snapshot=await getDocs(q);
 
 
 
@@ -142,15 +231,25 @@ bookingsDiv.innerHTML="";
 
 
 
+if(snapshot.empty){
+
+bookingsDiv.innerHTML="<h3>No bookings yet</h3>";
+
+return;
+
+}
+
+
+
+
 snapshot.forEach((doc)=>{
 
 
-let data = doc.data();
+let data=doc.data();
 
 
 
-bookingsDiv.innerHTML += `
-
+bookingsDiv.innerHTML +=`
 
 <div class="booking">
 
@@ -166,8 +265,8 @@ bookingsDiv.innerHTML += `
 
 </div>
 
-
 `;
+
 
 
 });
@@ -177,7 +276,16 @@ bookingsDiv.innerHTML += `
 
 
 
-loadBookings();
+
+document.getElementById("logout").onclick=()=>{
+
+
+signOut(auth);
+
+
+};
+
+
 
 
 
