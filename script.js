@@ -1,108 +1,178 @@
-// Mobile menu (if added)
+// MOBILE MENU
+
 const menu = document.querySelector(".menu");
-const nav = document.querySelector(".nav-links");
+const navLinks = document.querySelector(".nav-links");
 
 if(menu){
-    menu.onclick = () =>{
-        nav.classList.toggle("active");
-    };
+
+menu.addEventListener("click",()=>{
+
+navLinks.classList.toggle("active");
+
+});
+
 }
 
 
-// Scroll reveal animation
+
+
+// SCROLL REVEAL
 
 const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll",()=>{
-    reveals.forEach(item=>{
-        const windowHeight = window.innerHeight;
-        const revealTop = item.getBoundingClientRect().top;
 
-        if(revealTop < windowHeight - 100){
-            item.classList.add("active");
-        }
-    });
-});
+function reveal(){
+
+reveals.forEach((element)=>{
+
+let windowHeight = window.innerHeight;
+
+let elementTop = element.getBoundingClientRect().top;
 
 
-// Booking form WhatsApp send
+if(elementTop < windowHeight - 100){
 
-const bookingForm = document.querySelector(".booking-form");
+element.classList.add("active");
 
-if(bookingForm){
-
-bookingForm.addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-
-let name = document.querySelector("#name").value;
-let phone = document.querySelector("#phone").value;
-let room = document.querySelector("#room").value;
-let date = document.querySelector("#date").value;
-let message = document.querySelector("#message").value;
-
-
-let whatsapp =
-`Hello Nu Robe Hotel
-I want to make a reservation.
-
-Name: ${name}
-Phone: ${phone}
-Room: ${room}
-Date: ${date}
-Message: ${message}`;
-
-
-let url =
-"https://wa.me/251911819959?text="
-+encodeURIComponent(whatsapp);
-
-
-window.open(url,"_blank");
-
+}
 
 });
 
 }
 
 
-// Image gallery popup
+window.addEventListener("scroll",reveal);
 
-const images = document.querySelectorAll(".gallery-grid img");
-
-images.forEach(img=>{
-
-img.onclick=()=>{
-
-let popup=document.createElement("div");
-
-popup.className="image-popup";
-
-popup.innerHTML=`
-<img src="${img.src}">
-`;
-
-document.body.appendChild(popup);
+reveal();
 
 
-popup.onclick=()=>{
-popup.remove();
-};
-
-};
-
-});
 
 
-// Loader
+
+// REMOVE LOADER
 
 window.addEventListener("load",()=>{
 
 const loader=document.querySelector(".loader");
 
+
 if(loader){
+
 loader.style.display="none";
+
 }
+
+});
+
+
+
+
+
+// BOOKING TO WHATSAPP
+
+const bookingForm=document.querySelector(".booking-form");
+
+
+if(bookingForm){
+
+
+bookingForm.addEventListener("submit",(e)=>{
+
+
+e.preventDefault();
+
+
+
+let name=document.querySelector("#name").value;
+
+let phone=document.querySelector("#phone").value;
+
+let room=document.querySelector("#room").value;
+
+let date=document.querySelector("#date").value;
+
+let message=document.querySelector("#message").value;
+
+
+
+let text=
+
+`New Booking Request - Nu Robe Hotel
+
+Name: ${name}
+
+Phone: ${phone}
+
+Room: ${room}
+
+Date: ${date}
+
+Message: ${message}`;
+
+
+
+let whatsappURL=
+
+"https://wa.me/251911819959?text="
+
++ encodeURIComponent(text);
+
+
+
+window.open(whatsappURL,"_blank");
+
+
+
+});
+
+
+}
+
+
+
+
+
+// GALLERY POPUP
+
+
+const galleryImages=document.querySelectorAll(".gallery-grid img");
+
+
+galleryImages.forEach((image)=>{
+
+
+image.addEventListener("click",()=>{
+
+
+let popup=document.createElement("div");
+
+
+popup.className="image-popup";
+
+
+popup.innerHTML=
+
+`
+
+<img src="${image.src}">
+
+`;
+
+
+
+document.body.appendChild(popup);
+
+
+
+popup.onclick=()=>{
+
+popup.remove();
+
+};
+
+
+
+});
+
 
 });
