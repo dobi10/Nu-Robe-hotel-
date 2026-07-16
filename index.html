@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nu Robe Hotel</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Nu Robe Hotel</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
+
 <body>
+
+
+<!-- LOADER -->
+
+<div class="loader">
+<span></span>
+</div>
+
+
+
+<!-- NAVBAR -->
 
 <header>
 
 <nav class="navbar">
 
 <div class="logo">
-<i class="fa-solid fa-hotel"></i>
 Nu Robe Hotel
 </div>
+
 
 <ul class="nav-links">
 
@@ -41,7 +55,20 @@ Nu Robe Hotel
 
 </ul>
 
+
+<div class="menu">
+<i class="fas fa-bars"></i>
+</div>
+
+
 </nav>
+
+</header>
+
+
+
+
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -49,26 +76,30 @@ Nu Robe Hotel
 
 <div class="hero-content">
 
-<h1>NU ROBE HOTEL</h1>
 
-<p>Luxury • Comfort • Hospitality</p>
+<h1>Nu Robe Hotel</h1>
+
+
+<p>
+Comfort, Luxury and Hospitality in Robe
+</p>
+
 
 <div class="buttons">
 
-<a href="tel:+251911819959" class="call">
-<i class="fa-solid fa-phone"></i>
+
+<a class="call" href="tel:0911819959">
 Call Now
 </a>
 
-<a href="https://wa.me/251911819959?text=Hello%20Nu%20Robe%20Hotel,%20I%20would%20like%20to%20book%20a%20room." target="_blank" class="whatsapp">
 
-<i class="fa-brands fa-whatsapp"></i>
-
-Book on WhatsApp
-
+<a class="whatsapp" href="https://wa.me/251911819959">
+WhatsApp
 </a>
 
+
 </div>
+
 
 </div>
 
@@ -76,157 +107,281 @@ Book on WhatsApp
 
 </section>
 
-</header>
 
-<section class="about" id="about">
+
+
+
+<!-- ABOUT -->
+
+
+<section class="about reveal" id="about">
+
 
 <h2>About Us</h2>
 
+
 <p>
 
-Welcome to Nu Robe Hotel.
+Welcome to Nu Robe Hotel.  
+We provide comfortable rooms, quality service, delicious food and a relaxing environment for travelers, families and business guests.
 
-Enjoy elegant rooms, modern comfort, delicious dining, free Wi-Fi, secure parking, and exceptional hospitality in the heart of Robe.
+Located in Robe, our hotel offers a peaceful stay with modern facilities and friendly hospitality.
 
 </p>
 
+
 </section>
 
-<section class="rooms" id="rooms">
 
-<h2>Luxury Rooms</h2>
+
+
+
+<!-- ROOMS -->
+
+
+<section id="rooms" class="reveal">
+
+
+<h2>Our Rooms</h2>
+
 
 <div class="room-grid">
 
+
+
 <div class="room">
+
 
 <img src="images/room1.jpg">
 
-<h3>Deluxe Room</h3>
 
-<p>Luxury Bed</p>
+<h3>Standard Room</h3>
 
-<a href="https://wa.me/251911819959" target="_blank">Book Now</a>
+
+<p>
+Comfortable room with clean beds, Wi-Fi access and everything you need for a pleasant stay.
+</p>
+
+
+<a href="#booking">
+Book Now
+</a>
+
 
 </div>
 
+
+
+
+
 <div class="room">
+
 
 <img src="images/room2.jpg">
 
-<h3>Executive Room</h3>
 
-<p>Modern Comfort</p>
+<h3>Luxury Room</h3>
 
-<a href="https://wa.me/251911819959" target="_blank">Book Now</a>
 
-</div>
+<p>
+Spacious room with premium comfort and a relaxing atmosphere.
+</p>
 
-<div class="room">
 
-<img src="images/room3.jpg">
+<a href="#booking">
+Book Now
+</a>
 
-<h3>Family Room</h3>
-
-<p>Spacious & Comfortable</p>
-
-<a href="https://wa.me/251911819959" target="_blank">Book Now</a>
 
 </div>
 
+
 </div>
+
 
 </section>
 
-<section class="services" id="services">
+<!-- SERVICES -->
 
-<h2>Services</h2>
+<section id="services" class="reveal">
+
+
+<h2>Our Services</h2>
+
 
 <div class="service-grid">
 
-<div><i class="fa-solid fa-bed"></i><h4>Luxury Rooms</h4></div>
 
-<div><i class="fa-solid fa-wifi"></i><h4>Free Wi-Fi</h4></div>
+<div>
+<i class="fas fa-wifi"></i>
+<h3>Free Wi-Fi</h3>
+<p>Fast internet access for guests.</p>
+</div>
 
-<div><i class="fa-solid fa-utensils"></i><h4>Restaurant</h4></div>
 
-<div><i class="fa-solid fa-mug-hot"></i><h4>Breakfast</h4></div>
+<div>
+<i class="fas fa-utensils"></i>
+<h3>Restaurant</h3>
+<p>Delicious meals and drinks.</p>
+</div>
 
-<div><i class="fa-solid fa-car"></i><h4>Parking</h4></div>
 
-<div><i class="fa-solid fa-tv"></i><h4>Smart TV</h4></div>
+<div>
+<i class="fas fa-car"></i>
+<h3>Parking</h3>
+<p>Safe parking area available.</p>
+</div>
 
-<div><i class="fa-solid fa-shower"></i><h4>Hot Shower</h4></div>
 
-<div><i class="fa-solid fa-broom"></i><h4>Housekeeping</h4></div>
+<div>
+<i class="fas fa-coffee"></i>
+<h3>Breakfast</h3>
+<p>Fresh breakfast service.</p>
+</div>
 
-<div><i class="fa-solid fa-user-shield"></i><h4>24/7 Reception</h4></div>
 
-<div><i class="fa-solid fa-lock"></i><h4>Secure Hotel</h4></div>
+<div>
+<i class="fas fa-bed"></i>
+<h3>Comfort Rooms</h3>
+<p>Clean and relaxing rooms.</p>
+</div>
 
-<div><i class="fa-solid fa-snowflake"></i><h4>Air Conditioning</h4></div>
 
-<div><i class="fa-solid fa-mug-saucer"></i><h4>Coffee</h4></div>
+<div>
+<i class="fas fa-concierge-bell"></i>
+<h3>24/7 Service</h3>
+<p>Friendly customer support.</p>
+</div>
+
 
 </div>
 
 </section>
 
-<section id="gallery" class="gallery">
+
+
+
+
+<!-- GALLERY -->
+
+
+<section id="gallery" class="reveal">
+
 
 <h2>Gallery</h2>
 
+
 <div class="gallery-grid">
 
-<img src="images/hotel.jpg">
 
-<img src="images/room1.jpg">
+<img src="images/gallery1.jpg">
 
-<img src="images/room2.jpg">
+<img src="images/gallery2.jpg">
 
-<img src="images/room3.jpg">
+<img src="images/gallery3.jpg">
 
-<img src="images/hall.jpg">
+<img src="images/gallery4.jpg">
+
 
 </div>
 
+
 </section>
 
-<section id="contact" class="contact">
+
+
+
+
+<!-- BOOKING -->
+
+
+<section id="booking" class="booking reveal">
+
+
+<h2>Make Reservation</h2>
+
+
+<div class="booking-box">
+
+
+<form class="booking-form">
+
+
+<input id="name" type="text" placeholder="Your Name" required>
+
+
+<input id="phone" type="tel" placeholder="Phone Number" required>
+
+
+<select id="room">
+
+<option>Standard Room</option>
+
+<option>Luxury Room</option>
+
+</select>
+
+
+<input id="date" type="date" required>
+
+
+<textarea id="message" placeholder="Additional message"></textarea>
+
+
+<button type="submit">
+Send Booking
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- CONTACT -->
+
+
+<section id="contact" class="contact reveal">
+
 
 <h2>Contact Us</h2>
 
-<p><i class="fa-solid fa-location-dot"></i> 4X2X+2R6, Robe</p>
-
-<p><i class="fa-solid fa-phone"></i> +251 91 181 9959</p>
-
-<p><i class="fa-brands fa-whatsapp"></i> +251 91 181 9959</p>
-
-<a href="tel:+251911819959" class="call2">Call Hotel</a>
-
-<a href="https://wa.me/251911819959" class="whatsapp2" target="_blank">WhatsApp</a>
-
-</section>
-
-<footer>
 
 <p>
-
-© 2026 Nu Robe Hotel. All Rights Reserved.
-
+<i class="fas fa-phone"></i>
+0911 81 99 59
 </p>
 
-</footer>
 
-<a class="floating"
-href="https://wa.me/251911819959"
-target="_blank">
+<p>
+<i class="fas fa-location-dot"></i>
+Robe, Ethiopia
+</p>
 
-<i class="fa-brands fa-whatsapp"></i>
 
+<div class="social">
+
+
+<a href="#">
+<i class="fab fa-facebook"></i>
 </a>
 
-<script src="script.js"></script>
 
-</body>
-</html>
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+
+<a href="https://wa.me/251911819959">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+
+</
