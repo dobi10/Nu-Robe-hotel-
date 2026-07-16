@@ -49,6 +49,13 @@ transition:.3s;
 color:#FFD700;
 }
 
+.menu{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:#FFD700;
+}
+
 
 /* HERO */
 
@@ -103,14 +110,16 @@ font-weight:600;
 transition:.35s;
 }
 
-.call,.call2{
+.call,
+.call2{
 background:#FFD700;
 color:#111;
 }
 
-.whatsapp,.whatsapp2{
+.whatsapp,
+.whatsapp2{
 background:#25D366;
-color:white;
+color:#fff;
 }
 
 .call:hover,
@@ -120,6 +129,8 @@ color:white;
 transform:translateY(-5px);
 }
 
+
+/* GENERAL */
 
 section{
 padding:90px 8%;
@@ -239,9 +250,7 @@ cursor:pointer;
 
 .gallery-grid img:hover{
 transform:scale(1.05);
-}
-
-
+  }
 /* CONTACT */
 
 .contact{
@@ -254,32 +263,6 @@ font-size:20px;
 }
 
 
-footer{
-padding:35px;
-background:#000;
-text-align:center;
-}
-
-
-/* FLOATING WHATSAPP */
-
-.floating{
-position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
-height:65px;
-background:#25D366;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-font-size:34px;
-color:#fff;
-text-decoration:none;
-box-shadow:0 0 20px rgba(0,0,0,.4);
-z-index:999;
-  }
 /* BOOKING */
 
 .booking{
@@ -309,7 +292,7 @@ border:none;
 outline:none;
 border-radius:10px;
 background:#08111d;
-color:white;
+color:#fff;
 font-size:16px;
 }
 
@@ -335,23 +318,6 @@ transform:translateY(-5px);
 }
 
 
-/* MAP */
-
-.map{
-width:100%;
-height:400px;
-border-radius:20px;
-overflow:hidden;
-margin-top:30px;
-}
-
-.map iframe{
-width:100%;
-height:100%;
-border:0;
-}
-
-
 /* ROOM DETAILS */
 
 .room-details{
@@ -372,6 +338,23 @@ color:#ddd;
 content:"✓ ";
 color:#FFD700;
 font-weight:bold;
+}
+
+
+/* MAP */
+
+.map{
+width:100%;
+height:400px;
+border-radius:20px;
+overflow:hidden;
+margin-top:30px;
+}
+
+.map iframe{
+width:100%;
+height:100%;
+border:0;
 }
 
 
@@ -435,7 +418,59 @@ color:#111;
 }
 
 
-/* LOADING */
+/* FOOTER */
+
+footer{
+padding:35px;
+background:#000;
+text-align:center;
+}
+
+
+/* FLOATING WHATSAPP */
+
+.floating{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#25D366;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:34px;
+color:#fff;
+text-decoration:none;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+z-index:999;
+}
+
+
+/* IMAGE POPUP */
+
+.image-popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+cursor:pointer;
+}
+
+.image-popup img{
+max-width:90%;
+max-height:85%;
+border-radius:20px;
+box-shadow:0 0 30px #000;
+                         }
+/* LOADER */
 
 .loader{
 position:fixed;
@@ -460,18 +495,7 @@ animation:spin 1s linear infinite;
 }
 
 
-@keyframes spin{
-from{
-transform:rotate(0deg);
-}
-
-to{
-transform:rotate(360deg);
-}
-}
-
-
-/* ANIMATION */
+/* SCROLL REVEAL */
 
 .reveal{
 opacity:0;
@@ -484,6 +508,8 @@ opacity:1;
 transform:translateY(0);
 }
 
+
+/* ANIMATIONS */
 
 @keyframes fade{
 
@@ -500,9 +526,43 @@ transform:translateY(0);
 }
 
 
-/* MOBILE */
+@keyframes spin{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+
+/* MOBILE NAV */
 
 @media(max-width:768px){
+
+.menu{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#08111d;
+display:none;
+flex-direction:column;
+align-items:center;
+padding:30px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
 
 .hero h1{
 font-size:42px;
@@ -512,30 +572,32 @@ font-size:42px;
 font-size:18px;
 }
 
-.nav-links{
-display:none;
-}
 
 .buttons{
 flex-direction:column;
 align-items:center;
 }
 
+
 section{
 padding:70px 20px;
 }
 
-.booking-box{
-padding:25px 15px;
-}
 
 h2{
 font-size:32px;
 }
 
+
+.booking-box{
+padding:25px 15px;
+}
+
+
 .room img{
 height:220px;
 }
+
 
 .floating{
 width:55px;
@@ -546,6 +608,8 @@ font-size:28px;
 }
 
 
+/* SMALL PHONES */
+
 @media(max-width:500px){
 
 .hero h1{
@@ -554,6 +618,19 @@ font-size:34px;
 
 .hero p{
 font-size:16px;
+}
+
+
+.call,
+.whatsapp,
+.call2,
+.whatsapp2{
+padding:12px 25px;
+}
+
+
+.gallery-grid img{
+height:200px;
 }
 
   }
