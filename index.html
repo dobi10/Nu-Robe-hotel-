@@ -20,12 +20,6 @@
 <body>
 
 
-<div class="loader">
-<span></span>
-</div>
-
-
-
 <header>
 
 <nav class="navbar">
@@ -54,11 +48,6 @@ Nu Robe Hotel
 </ul>
 
 
-<div class="menu">
-<i class="fas fa-bars"></i>
-</div>
-
-
 </nav>
 
 </header>
@@ -78,7 +67,7 @@ Nu Robe Hotel
 
 
 <p>
-Comfort • Luxury • Hospitality
+Experience comfort, luxury and great hospitality
 </p>
 
 
@@ -109,7 +98,8 @@ WhatsApp
 
 
 
-<section class="about reveal" id="about">
+
+<section class="about" id="about">
 
 
 <h2>About Us</h2>
@@ -117,9 +107,9 @@ WhatsApp
 
 <p>
 
-Welcome to Nu Robe Hotel. We provide comfortable rooms, quality service, delicious food and a relaxing environment for travelers, families and business guests.
+Welcome to Nu Robe Hotel. We offer comfortable rooms, delicious restaurant services, free Wi-Fi, parking and a relaxing environment for our guests.
 
-Our goal is to provide a memorable stay with friendly hospitality and modern facilities.
+Whether you are traveling for business or leisure, we are ready to provide you with a comfortable and memorable stay.
 
 </p>
 
@@ -131,7 +121,7 @@ Our goal is to provide a memorable stay with friendly hospitality and modern fac
 
 
 
-<section id="rooms" class="reveal">
+<section id="rooms">
 
 
 <h2>Our Rooms</h2>
@@ -143,15 +133,12 @@ Our goal is to provide a memorable stay with friendly hospitality and modern fac
 
 <div class="room">
 
-
-<img src="images/room1.jpg" alt="Standard Room">
-
+<img src="images/room1.jpg" alt="Room">
 
 <h3>Standard Room</h3>
 
-
 <p>
-Clean and comfortable room with Wi-Fi access and everything needed for a pleasant stay.
+Clean and comfortable room with modern facilities.
 </p>
 
 
@@ -168,15 +155,12 @@ Book Now
 
 <div class="room">
 
-
-<img src="images/room2.jpg" alt="Luxury Room">
-
+<img src="images/room2.jpg" alt="Room">
 
 <h3>Luxury Room</h3>
 
-
 <p>
-Spacious room with a relaxing atmosphere and premium comfort.
+Spacious room designed for a comfortable stay.
 </p>
 
 
@@ -189,14 +173,14 @@ Book Now
 
 
 
+
 </div>
 
 
   </section>
   
-<!-- SERVICES -->
+<section id="services">
 
-<section id="services" class="reveal">
 
 <h2>Our Services</h2>
 
@@ -205,48 +189,100 @@ Book Now
 
 
 <div>
+
 <i class="fas fa-wifi"></i>
+
 <h3>Free Wi-Fi</h3>
-<p>Fast internet access for guests.</p>
+
+<p>
+Fast internet access for our guests.
+</p>
+
 </div>
 
 
+
+
 <div>
+
 <i class="fas fa-utensils"></i>
+
 <h3>Restaurant</h3>
-<p>Delicious meals and drinks.</p>
+
+<p>
+Fresh meals and drinks available.
+</p>
+
 </div>
 
 
+
+
+
 <div>
+
 <i class="fas fa-car"></i>
+
 <h3>Parking</h3>
-<p>Safe parking space available.</p>
+
+<p>
+Safe and convenient parking area.
+</p>
+
 </div>
 
 
+
+
+
 <div>
+
 <i class="fas fa-coffee"></i>
+
 <h3>Breakfast</h3>
-<p>Fresh breakfast service.</p>
+
+<p>
+Enjoy a fresh breakfast every morning.
+</p>
+
 </div>
 
 
+
+
+
 <div>
+
 <i class="fas fa-bed"></i>
+
 <h3>Comfort Rooms</h3>
-<p>Clean and relaxing rooms.</p>
+
+<p>
+Clean rooms for a relaxing stay.
+</p>
+
 </div>
+
+
+
 
 
 <div>
+
 <i class="fas fa-concierge-bell"></i>
-<h3>24/7 Service</h3>
-<p>Friendly guest support.</p>
+
+<h3>Guest Service</h3>
+
+<p>
+Friendly support for our guests.
+</p>
+
 </div>
 
 
+
 </div>
+
 
 </section>
 
@@ -254,10 +290,9 @@ Book Now
 
 
 
-<!-- GALLERY -->
 
 
-<section id="gallery" class="reveal">
+<section id="gallery">
 
 
 <h2>Gallery</h2>
@@ -266,53 +301,76 @@ Book Now
 <div class="gallery-grid">
 
 
+<img src="images/gallery1.jpg">
+
+<img src="images/gallery2.jpg">
+
+<img src="images/gallery3.jpg">
+
+<img src="images/gallery4.jpg">
+
+
 <img src="images/view4.jpg">
+
 <img src="images/view5.jpg">
+
 <img src="images/view6.jpg">
+
 <img src="images/view7.jpg">
+
 <img src="images/view8.jpg">
+
 <img src="images/view9.jpg">
+
 <img src="images/view10.jpg">
+
 <img src="images/view11.jpg">
+
 <img src="images/view12.jpg">
+
 <img src="images/view13.jpg">
+
 <img src="images/view14.jpg">
+
 <img src="images/view15.jpg">
+
 <img src="images/view16.jpg">
+
 <img src="images/view17.jpg">
+
 <img src="images/view18.jpg">
+
 <img src="images/view19.jpg">
+
 <img src="images/view20.jpg">
 
 
 </div>
 
 
-</section>
+  </section>
+  
+<section id="booking">
 
 
+<h2>Make A Reservation</h2>
 
 
-
-<!-- BOOKING -->
-
-
-<section id="booking" class="booking reveal">
+<form id="bookingForm">
 
 
-<h2>Make Reservation</h2>
+<input 
+type="text" 
+id="name" 
+placeholder="Your Name" 
+required>
 
 
-<div class="booking-box">
-
-
-<form class="booking-form">
-
-
-<input id="name" type="text" placeholder="Your Name" required>
-
-
-<input id="phone" type="tel" placeholder="Phone Number" required>
+<input 
+type="tel" 
+id="phone" 
+placeholder="Phone Number" 
+required>
 
 
 <select id="room">
@@ -324,10 +382,19 @@ Book Now
 </select>
 
 
-<input id="date" type="date" required>
+
+<input 
+type="date" 
+id="date" 
+required>
 
 
-<textarea id="message" placeholder="Additional message"></textarea>
+
+<textarea 
+id="message" 
+placeholder="Your message">
+</textarea>
+
 
 
 <button type="submit">
@@ -338,22 +405,19 @@ Send Booking
 </form>
 
 
-</div>
-
-
 </section>
 
 
 
 
 
-<!-- CONTACT -->
 
 
-<section id="contact" class="contact reveal">
+<section id="contact" class="contact">
 
 
 <h2>Contact Us</h2>
+
 
 
 <p>
@@ -362,43 +426,55 @@ Send Booking
 </p>
 
 
+
 <p>
 <i class="fas fa-location-dot"></i>
 Robe, Ethiopia
 </p>
 
 
+
+<p>
+<i class="fas fa-envelope"></i>
+Nu Robe Hotel
+</p>
+
+
+
 </section>
 
 
 
 
 
-<!-- MAP -->
 
 
-<section class="reveal">
+<section>
 
 
-<h2>Location</h2>
+<h2>Find Us</h2>
 
 
 <iframe
+
+src="https://maps.google.com/maps?q=Robe%20Ethiopia&output=embed"
 
 width="100%"
 
 height="350"
 
-style="border:0;border-radius:20px"
+style="border:0;border-radius:20px;"
 
-loading="lazy"
-
-src="https://maps.google.com/maps?q=Robe%20Ethiopia&output=embed">
+loading="lazy">
 
 </iframe>
 
 
+
 </section>
+
+
+
 
 
 
@@ -418,14 +494,16 @@ src="https://maps.google.com/maps?q=Robe%20Ethiopia&output=embed">
 
 
 
-<!-- WHATSAPP FLOATING BUTTON -->
 
 
-<a class="floating" href="https://wa.me/251911819959">
+<a 
+href="https://wa.me/251911819959" 
+class="floating">
 
 <i class="fab fa-whatsapp"></i>
 
 </a>
+
 
 
 
@@ -439,4 +517,5 @@ src="https://maps.google.com/maps?q=Robe%20Ethiopia&output=embed">
 
 </body>
 
-                                   </html>
+
+</html>
