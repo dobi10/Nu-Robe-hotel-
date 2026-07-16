@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nu Robe Hotel Admin</title>
+
+<style>
+
+body{
+font-family:Poppins,Arial,sans-serif;
+background:#08111d;
+color:white;
+padding:30px;
+}
+
+h1{
+color:#FFD700;
+text-align:center;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+.booking{
+background:#122031;
+padding:20px;
+border-radius:15px;
+margin:20px 0;
+box-shadow:0 0 15px rgba(255,215,0,.15);
+}
+
+.booking h3{
+color:#FFD700;
+}
+
+.booking p{
+margin:8px 0;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>Nu Robe Hotel Bookings</h1>
+
+
+<div id="bookings">
+
+Loading bookings...
+
+</div>
+
+
+</div>
+
+
+
+<script type="module">
+
+
+import { initializeApp } 
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import { 
+
+getFirestore,
+
+collection,
+
+getDocs,
+
+orderBy,
+
+query
+
+} 
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+
+
+const firebaseConfig = {
+
+
+apiKey: "AIzaSyBCEuMH5hH2jPmpANFSIQ6P57A4r5eG6Zk",
+
+authDomain: "nu-robe.firebaseapp.com",
+
+projectId: "nu-robe",
+
+storageBucket: "nu-robe.firebasestorage.app",
+
+messagingSenderId: "994659173220",
+
+appId: "1:994659173220:web:5d53ae9422c77e1d917071"
+
+};
+
+
+
+const app = initializeApp(firebaseConfig);
+
+
+const db = getFirestore(app);
+
+
+
+const bookingsDiv =
+document.getElementById("bookings");
+
+
+
+async function loadBookings(){
+
+
+const q = query(
+collection(db,"bookings"),
+orderBy("time","desc")
+);
+
+
+
+const snapshot = await getDocs(q);
+
+
+
+bookingsDiv.innerHTML="";
+
+
+
+snapshot.forEach((doc)=>{
+
+
+let data = doc.data();
+
+
+
+bookingsDiv.innerHTML += `
+
+
+<div class="booking">
+
+<h3>${data.name}</h3>
+
+<p><b>Phone:</b> ${data.phone}</p>
+
+<p><b>Room:</b> ${data.room}</p>
+
+<p><b>Date:</b> ${data.date}</p>
+
+<p><b>Message:</b> ${data.message}</p>
+
+</div>
+
+
+`;
+
+
+});
+
+
+}
+
+
+
+loadBookings();
+
+
+
+</script>
+
+
+</body>
+
+</html>
